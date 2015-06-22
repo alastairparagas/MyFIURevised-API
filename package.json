@@ -1,0 +1,45 @@
+{
+  "name": "myfiurevised-api",
+  "version": "1.0.0",
+  "description": "MyFIURevised is a revised version of the MyFIU Student Portal. MyFIURevised-API is the REST-ful Node-Express API backend layer that spits out JSON data based on the retrieved information from the student's MyFIU portal.",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alastairparagas/MyFIURevised-API.git"
+  },
+  "keywords": [
+    "fiu",
+    "myfiu",
+    "alastair",
+    "paragas",
+    "alastair"
+  ],
+  "author": "Alastair Paragas <alastairparagas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alastairparagas/MyFIURevised-API/issues"
+  },
+  "homepage": "https://github.com/alastairparagas/MyFIURevised-API#readme",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "casperjs": "^1.1.0-beta3",
+    "express": "^4.13.0",
+    "express-session": "^1.11.3",
+    "spooky": "^0.2.5"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-mocha": "^2.1.2",
+    "gulp-watch": "^4.2.4",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.2.5",
+    "mockery": "^1.4.0",
+    "supertest": "^1.0.1"
+  }
+}
