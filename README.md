@@ -10,7 +10,7 @@ MyFIURevised-API uses the following technologies:
 * [Docker](https://docs.docker.com/) (for app containerization/scalability)
 * [Express](http://expressjs.com/) (for handling request routes and organizing logic)
 * [CasperJS with SpookyJS](https://github.com/SpookyJS/SpookyJS) (for grabbing data from the MyFIU student portal)
-* [Mocha](http://mochajs.org/)/[Chai](http://chaijs.com/)/[Chai-as-promised](https://github.com/domenic/chai-as-promised/)/[SuperTest](https://github.com/visionmedia/supertest) (for unit/integration testing and ensuring bug-free code)
+* [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Chai-as-promised](https://github.com/domenic/chai-as-promised/), [SuperTest](https://github.com/visionmedia/supertest), [Supertest-as-promised](https://github.com/WhoopInc/supertest-as-promised) and [Mockery](https://github.com/mfncooper/mockery) (for unit/integration testing and ensuring bug-free code)
 * [Gulp](http://gulpjs.com/) (for automating tasks like running unit tests)
 
 ## Contributing
