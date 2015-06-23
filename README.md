@@ -6,12 +6,12 @@ MyFIURevised-API is the backend/server API layer of MyFIURevised that uses Caspe
 ## Technologies
 MyFIURevised-API uses the following technologies:
 
-* Nginx Server with StartSSL (asynchronous/non-blocking server with encryption for security of data transmission)
-* Docker (for app containerization/scalability)
-* Express (for handling request routes)
-* CasperJS (for grabbing data from the MyFIU student portal)
-* Mocha/Chai/SuperTest (for unit/integration testing and ensuring bug-free code)
-* Gulp (for automating tasks like running unit tests)
+* [Nginx Server with StartSSL](http://nginx.org/en/docs/) (asynchronous/non-blocking server with encryption for security of data transmission)
+* [Docker](https://docs.docker.com/) (for app containerization/scalability)
+* [Express](http://expressjs.com/) (for handling request routes and organizing logic)
+* [CasperJS with SpookyJS](https://github.com/SpookyJS/SpookyJS) (for grabbing data from the MyFIU student portal)
+* [Mocha](http://mochajs.org/)/[Chai](http://chaijs.com/)/[Chai-as-promised](https://github.com/domenic/chai-as-promised/)/[SuperTest](https://github.com/visionmedia/supertest) (for unit/integration testing and ensuring bug-free code)
+* [Gulp](http://gulpjs.com/) (for automating tasks like running unit tests)
 
 ## Contributing
 If you want to contribute, please create a pull request. Please make sure that you write test cases for your code and that such tests pass!
