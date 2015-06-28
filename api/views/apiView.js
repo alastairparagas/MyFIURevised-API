@@ -2,8 +2,9 @@
 	'use strict';
 	
 	/**
+	* @module api/views
 	* @name apiView
-	* @description API layer View for our API.
+	* @description API layer View for our app.
 	* @param {Object} responseStream - Express 'response' object whose output 
 	*	is being constructed.
 	* @param {Object} respOptions - Configuration for the constructed output. 
@@ -18,9 +19,7 @@
 		if (respOptions && typeof respOptions === "object") {
 			hasResponseStatus = "status" in respOptions && 
 				(respOptions.status >= 200 || respOptions.status <= 499);
-			
 			hasResponseMessage = "message" in respOptions;
-			
 			hasResponseData = "data" in respOptions &&
 				typeof respOptions.data === "object";
 		}

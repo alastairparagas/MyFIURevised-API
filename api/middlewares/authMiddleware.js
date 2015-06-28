@@ -1,9 +1,10 @@
 (function (global) {
 	'use strict';
 	
-	var apiView = require('../views/api');
+	var apiView = require('api/views/apiView');
 	
 	/**
+	* @module api/middlewares
 	* @name authMiddleware
 	* @description Authentication Middleware for our API. If the client
 	*	has not been authenticated, do not allow the client to access 

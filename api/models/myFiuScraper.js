@@ -2,24 +2,20 @@
 	'use strict';
 	
 	var Spooky = require('spooky'),
-		config = require('../config');
+		config = require('api/config');
 	
-	function myFiuScraper(spookyListener) {
+	/**
+	* @module api/models
+	* @name myFiuScraper
+	* @description Bootstraps SpookyJS to our needs. SpookyJS allows us to 
+	*	use CasperJS/PhantomJS in a NodeJS execution context.
+	* @returns {Object} Promise
+	*/
+	
+	function myFiuScraper() {
 		
-		function initSpooky(resolve, reject) {
-			var spookyBrowser = new Spooky({
-				child: {
-					transport: 'http'
-				},
-				casper: {
-					pageSettings: {
-						userAgent: config.userAgent,
-						XSSAuditingEnabled: true,
-						loadImages: false,
-						loadPlugins: false
-					}
-				}
-			}, function (error) {
+		function promiseExecutor(resolve, reject) {
+			var spookyBrowser = new Spooky(config.Spooky, function (error) {
 				var e;
 				if (error) {
 					e = new Error('Cannot initialize SpookyJS for scraping');
@@ -33,11 +29,11 @@
 			});
 			
 			spookyBrowser.on('error', function (error) {
-				console.log(error);
+				global.console.log(error);
 			});
 		}
 		
-		return new Promise(initSpooky);
+		return new Promise(promiseExecutor);
 	}
 	
 	module.exports = myFiuScraper;

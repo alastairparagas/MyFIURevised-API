@@ -1,14 +1,14 @@
 (function (global) {
 	'use strict';
 
-	var myFiuScraper = require('./myFiuScraper');
+	var myFiuScraper = require('api/models/myFiuScraper');
 
 	/**
 	* @name validateCredentials
 	* @description Checks to see if the user with the provided userId and 
 	*	userPassword actually exists in MyFIU
-	* @param {Object} userId - Panther ID of the student
-	* @param {Object} userPassword - Password of the student
+	* @param {string} userId - Panther ID of the student
+	* @param {string} userPassword - Password of the student
 	* @returns {Object} Promise
 	*/
 	function validateCredentials(userId, userPassword) {
