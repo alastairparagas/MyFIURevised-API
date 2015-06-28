@@ -1,16 +1,22 @@
 (function (global) {
 	'use strict';
 	
-	var express = require('express'),
-		missingRouteMiddleware = require('./api/middlewares/missingRoute'), 
-		app = express(),
-		api = require('./api/routes');
+	require('app-module-path').addPath(__dirname);
 	
-	app.use('/api/v1', api);
+	var express = require('express'),
+		missingRouteMiddleware = 
+			require('api/middlewares/missingRouteMiddleware'), 
+		apiRoutes = require('api/routes'),
+		config = require('api/config'),
+		
+		app = express();
+		
+	
+	app.use('/api/v1', apiRoutes);
 	app.use(missingRouteMiddleware);
 	
-	app.listen(8000, function () {
-		global.console.log("App listening at port 8000");	
+	app.listen(config.port, function () {
+		global.console.log("App listening at port " + config.port);	
 	});
 	
 }(global));

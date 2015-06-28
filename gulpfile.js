@@ -5,15 +5,21 @@
 		mocha = require('gulp-mocha'),
 		watch = require('gulp-watch'),
 		jshint = require('gulp-jshint'),
-		jshintStylish = require('jshint-stylish');
+		jshintStylish = require('jshint-stylish'),
+		jsdoc = require('gulp-jsdoc'),
+		colors = require('colors');
 	
+	var jshintSrc, testSrc;
+	
+	jshintSrc = [
+		'api/**/*.js',
+		'tests/**/*.js',
+		'server.js',
+		'gulpfile.js'
+	];
 	
 	function jshintTask() {
-		return gulp.src([
-				'api/**/*.js',
-				'tests/**/*.js',
-				'server.js'
-			])
+		return gulp.src(jshintSrc)
 			.pipe(jshint())
 			.pipe(jshint.reporter(jshintStylish));	
 	}
@@ -23,19 +29,16 @@
 	});
 	
 	gulp.task('jshintWatch', function () {
-		watch('**/*.js', function () {
-			global.console.log('JsHint Re-run ------------------>');
+		watch(jshintSrc, function () {
+			global.console.log(colors.yellow('JsHint Re-run'));
 			jshintTask();
 		});
 	});
 	
 
 	function testTask() {
-		return gulp.src('./tests/unit/**/*.js')
+		return gulp.src(testSrc)
 			.pipe(mocha())
-			.once('error', function () {
-				process.exit(1);
-			})
 			.once('end', function () {
 				process.exit();
 			});
@@ -46,8 +49,8 @@
 	});
 	
 	gulp.task('testWatch', function () {
-		watch('**/*.js', function () {
-			global.console.log('Tests Re-run ------------------>');
+		watch(testSrc, function () {
+			global.console.log(colors.yellow('Mocha Tests Re-run'));
 			testTask();
 		});
 	});
